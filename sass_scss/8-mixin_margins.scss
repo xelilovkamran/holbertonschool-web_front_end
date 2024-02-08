@@ -1,0 +1,14 @@
+/* giving margin with mixin */
+
+@mixin marginLeftRight($value) {
+    margin-left: $value;
+    margin-right: $value;
+}
+
+body {
+    @include marginLeftRight(10px);
+}
+
+div {
+    @include marginLeftRight(15px);
+}

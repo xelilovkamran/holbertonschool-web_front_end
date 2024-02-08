@@ -1,0 +1,10 @@
+/* assigning text color value to body and p tags */
+
+$variable: #eD3D3D;
+body {
+    color: $variable;
+}
+
+p {
+    color: $variable;
+}

@@ -1,0 +1,19 @@
+/* using inheritance */
+
+%fontSize {
+    font-size: 12px;
+}
+
+.info {
+    @extend %fontSize;
+}
+
+.success {
+    @extend %fontSize;
+    color: #00FF00;
+}
+
+.warning {
+    @extend %fontSize;
+    color: #FF0000;
+}
