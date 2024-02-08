@@ -1,19 +1,15 @@
-/* using inheritance */
+/* using @extend */
 
-%fontSize {
+.info {
     font-size: 12px;
 }
 
-.info {
-    @extend %fontSize;
-}
-
 .success {
-    @extend %fontSize;
+    @extend .info;
     color: #00FF00;
 }
 
 .warning {
-    @extend %fontSize;
+    @extend .info;
     color: #FF0000;
 }

@@ -1,4 +1,4 @@
-/* use forEach and use background image based on the name */
+/* use each loop and use background image based on the name */
 @import "11-photos";
 
 @each $name in $list-names {
