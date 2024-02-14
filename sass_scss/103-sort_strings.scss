@@ -1,11 +1,11 @@
-@use "103-sort_list";
+@import "103-sort_list";
 
 $sort_order: a b c d e f g h i j k l m n o p q r s t u v w x y z;
 
 @function swap_words($first_word, $second_word, $i) {
   @for $index from 1 through min(length($first_word), length($second_word)) {
-    $first_letter: str-slice($first_word, $index, $index);
-    $second_letter: str-slice($second_word, $index, $index);
+    $first_letter: to-lower-case(str-slice($first_word, $index, $index));
+    $second_letter: to-lower-case(str-slice($second_word, $index, $index));
     $first_letter_index: index($sort_order, $first_letter);
     $second_letter_index: index($sort_order, $second_letter);
 
