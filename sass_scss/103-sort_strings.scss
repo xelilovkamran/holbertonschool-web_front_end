@@ -1,0 +1,40 @@
+$list_to_sort: john anna zoe kim felicia carrie; 
+$sort-order: a b c d e f g h i j k l m n o p q r s t u v w x y z !default;
+
+$index: index($list_to_sort, anna);
+
+@function swap_words($first_word, $second_word, $index) {
+    @for $i from 1 through min(length($first_word), length($second_word)) {
+	$first_letter: str-slice($first_word, $i, $i);
+	$second_letter: str_slice($second_word, $i, $i);
+	$first_letter_index: index($sort_order, $first_letter);
+	$second_letter_index: index($sort_order, $second_letter);
+
+	@if $first_letter_index > $second_letter_index {
+	    $list_to_sort: set-nth($list_to_sort, $index, $second_letter);
+	    $list_to_sort: set-nth($list_to_sort, $index + 1, $first_letter);
+	    @return $list_to_sort;
+	}
+    }
+
+    @return $list_to_sort; 
+}
+
+@function length($list) {
+    $count: 0;
+    @each $element in $list {
+	$count: $count + 1;
+    }
+
+    @return $count;
+}
+
+@for $index from 0 through length($list_to_sort) {
+    @each $word in $list_to_sort {
+	$first_word_index: index($list_to_sort, $word);
+	$second_word_index: $first_word_index + 1;
+	$second_word: nth($list_to_sort, $second_word_index);
+	$list_to_sort: swap_words($word, $second_word, $first_word_index);
+    }
+    @debug($list_to_sort);
+}
