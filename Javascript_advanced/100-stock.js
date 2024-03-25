@@ -29,8 +29,4 @@ const itemName = window.prompt(
 
 itemName.toLowerCase();
 
-if (itemName === "macbook" || itemName === "iphone") {
-  processOrder(itemName, processPayment, processError);
-} else {
-  window.alert("Debes escribir macbook o iphone");
-}
+processOrder(itemName, processPayment, processError);
