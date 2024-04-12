@@ -76,7 +76,7 @@
           a.style.fontWeight = "normal";
           a.style.fontStyle = "italic";
           a.style.marginLeft = "10px";
-          a.onclick = deleteCookiesAndShowForm;
+          a.setAttribute("onclick", "deleteCookiesAndShowForm()");
 
           h1.innerHTML = `Welcome: ${firstname}`;
           h1.id = "message";
